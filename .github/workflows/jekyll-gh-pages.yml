@@ -19,24 +19,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4  # 已经是最新
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4  # 从v3升级到v4
+        uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'yarn'
+          cache: 'pnpm'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build website
-        run: yarn build
+        run: pnpm build
         env:
           NODE_ENV: production
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3  # 从v2升级到v3
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./build
 
@@ -49,4 +52,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4  # 从v2升级到v4
+        uses: actions/deploy-pages@v4
