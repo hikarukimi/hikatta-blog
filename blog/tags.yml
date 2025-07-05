@@ -1,0 +1,8 @@
+#Docusaurus中blog标签配置文件,blog可以通过tag来进行筛选查找
+#label: 标签名称
+#permalink: 标签的链接地址,浏览器url中显示为tags/标签名称
+#description: 标签的描述信息,在标签页面中显示
+backend:
+  label: Backend
+  permalink: /backend
+  description: Backend knowledge

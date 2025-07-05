@@ -1,0 +1,12 @@
+#page:ture
+#如果page选项为true，则会在作者页面生成一个作者列表，列出他的所有文章
+#......
+
+hikarukimi:
+  name: Hikarukimi
+  title: 某双流一大学大二学生
+  url: https://github.com/hikarukimi
+  image_url: https://github.com/hikarukimi.png
+  page: true
+  socials:
+      github: hikarukimi
